@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --navy: #103b52;
+  --teal: #0d7180;
+  --teal-hover: #095d6b;
+  --mint: #eaf6f5;
+  --sky: #edf5fb;
+  --ink: #183342;
+  --muted: #617582;
+  --line: #dce8eb;
+  --white: #fff;
+  --gold: #d9a94b;
+  --shadow: 0 18px 50px rgba(18, 59, 78, 0.10);
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Hind Siliguri', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  background: #fff;
+  line-height: 1.6;
+}
+
+.font-bengali {
+  font-family: 'Hind Siliguri', 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Signature Arched Portrait Geometry from user reference */
+.portrait-placeholder {
+  width: min(380px, 92%);
+  height: 420px;
+  border-radius: 180px 180px 28px 28px;
+  background: linear-gradient(145deg, #d8eeec, #c6dfe8);
+  border: 10px solid rgba(255, 255, 255, 0.85);
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 850px) {
+  .portrait-placeholder {
+    height: 350px;
+  }
+}
+
+/* Subtle print styles for the Appointment Token */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-token, #printable-token * {
+    visibility: visible;
+  }
+  #printable-token {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
